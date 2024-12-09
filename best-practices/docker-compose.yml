@@ -1,0 +1,11 @@
+version: '3.7'
+services:
+  localstack:
+    image: localstack/localstack
+    environment:
+      - SERVICES=s3
+      - DEFAULT_REGION=us-east-1
+    ports:
+      - "4566:4566"  # Localstack S3 endpoint
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
